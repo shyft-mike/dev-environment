@@ -5,9 +5,11 @@ This is a basic python 3.7 dev environment.
 - Formatting with black
 - Linting with flake8
 - Frontend with streamlit
+- Jupyter lab
 
 # TODO
-- Jupyter lab
+- Refactor structure
+- Add import sorting
 - ?
 
 # Getting Started
@@ -24,5 +26,9 @@ sh start.sh
 8. Select the Python 3.7 interpreter
 9. To start Streamlit, run
 ```
-python -m streamlit run python/src/main.py
+sh start_streamlit.sh
+```
+10. To start jupyter, run
+```
+sh start_jupyter.sh
 ```
