@@ -1,10 +1,7 @@
 FROM python:3.7
 
-WORKDIR /app
+WORKDIR /root/dev
 
-COPY jupyter_lab_config.py /config/
-COPY requirements .
-COPY start_jupyter.sh .
-COPY start_streamlit.sh .
+COPY python/requirements .
 
 RUN python -m pip install -r requirements

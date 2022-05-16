@@ -975,7 +975,7 @@ c.ServerApp.port = 8880
 
 ## Preferred starting directory to use for notebooks and kernels.
 #  Default: ''
-c.ServerApp.preferred_dir = "/app/python/notebooks"
+c.ServerApp.preferred_dir = "/root/dev/notebooks"
 
 ## DISABLED: use %pylab or %matplotlib in the notebook to enable matplotlib.
 #  Default: 'disabled'
