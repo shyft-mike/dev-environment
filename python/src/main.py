@@ -18,7 +18,7 @@ def render():
     data = pd.DataFrame([[1, 2], [3, 4]], columns=["test1", "test2"])
     st.button("Log", on_click=handle_log_click)
     st.write(data)
-    st.bar_chart(data)
+    st.area_chart(data)
 
 
 render()
