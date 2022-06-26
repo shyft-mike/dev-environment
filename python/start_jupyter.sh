@@ -2,4 +2,4 @@
 
 export JUPYTER_CONFIG_DIR=/root/dev/config
 
-jupyter lab
+jupyter lab --allow-root

@@ -11,20 +11,28 @@ This is a basic python 3.7 dev environment.
 - Refactor structure
 - Add import sorting
 - ?
-
 # Getting Started
 1. Install Docker Desktop
+   - Version 19 worked for me
 2. Install VSCode
-3. In VSCode, install the Remote Development extension
-4. In your terminal, run
+1. In VSCode, install the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension
+2. In your terminal, run
 ```
-sh start.sh
+sh build.sh # create local docker container
+sh start.sh # start container
 ```
 5. In VSCode, press F1 to bring up the command window and select "attach to running container..."
+   * Or CTRL-Shift-P and type "Attach to running container"
 6. Select dev-env-1 to open your dev container
-7. Install the Python extension
-8. Select the Python 3.7 interpreter
-9. To start Streamlit, run
+7. Install the VSCode Python extension in the container (see window that opens from previous step)
+8. Select the Python 3.7 interpreter in VSCode
+   * CTRL-Shift-P and type "Python Interpreter", you should find it there
+7. Install python packages (if necessary):
+```
+cd python
+pip3 install -r requirements.txt
+```
+8.  To start Streamlit, on your docker container window run:
 ```
 sh start_streamlit.sh
 ```

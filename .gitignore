@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 python/config/lab/**
+*.ipynb
+.DS_Store
