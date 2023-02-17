@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  api:
+    container_name: dev-api
+    build: ./api
+    entrypoint: ./docker-entrypoint.sh
+    environment:
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: example
+    volumes:
+      - ./api:/opt/app
+    depends_on:
+      - db
+  www:
+    container_name: dev-www
+    build: ./www
+    volumes:
+      - ./www:/opt/app
+  server:
+    container_name: dev-server
+    build: ./server
+    ports:
+      - 8080:80
+    restart: always
+    depends_on:
+      - api
+      - www
+  db:
+    container_name: dev-db
+    build: ./db
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example

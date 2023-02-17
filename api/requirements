@@ -1,0 +1,6 @@
+black
+fastapi
+flake8
+mysql
+pymongo
+uvicorn[standard]
