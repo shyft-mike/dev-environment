@@ -5,17 +5,18 @@ services:
     build: ./api
     entrypoint: ./docker-entrypoint.sh
     environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
       MONGO_USERNAME: root
       MONGO_PASSWORD: example
     volumes:
       - ./api:/opt/app
     depends_on:
       - db
-  www:
-    container_name: dev-www
-    build: ./www
-    volumes:
-      - ./www:/opt/app
+  # www:
+  #   container_name: dev-www
+  #   build: ./www
+  #   volumes:
+  #     - ./www:/opt/app
   server:
     container_name: dev-server
     build: ./server
@@ -24,7 +25,7 @@ services:
     restart: always
     depends_on:
       - api
-      - www
+      # - www
   db:
     container_name: dev-db
     build: ./db

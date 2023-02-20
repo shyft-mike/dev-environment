@@ -1,6 +1,6 @@
 black
 fastapi
 flake8
-mysql
+openai
 pymongo
 uvicorn[standard]
